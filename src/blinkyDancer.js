@@ -12,20 +12,11 @@ makeBlinkyDancer.prototype.oldStep = makeDancer.prototype.step; // <-- stepStore
 makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 
 makeBlinkyDancer.prototype.step = function () {
-  //console.log(this.oldStep);
-  // this.oldStep = this.step;
-  //console.log('Bump');
- // setTimeout(this.oldStep, this.timeBetweenSteps); 
-  
-  this.oldStep();
+  console.log('blinky step');
+  console.log(this);
+  makeDancer.prototype.step.call(this);
   this.$node.toggle();
-  setTimeout(this.step, this.timeBetweenSteps);
 };
-
-var paulDancer = new makeBlinkyDancer(100, 200, 500);
-console.log(paulDancer.oldStep); // expect old step function!
-console.log(paulDancer.step); // expect old step function!
-//console.log(makeDancer.prototype.step);
 
 // var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 //   var blinkyDancer = makeDancer(top, left, timeBetweenSteps);

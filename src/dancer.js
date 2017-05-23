@@ -8,12 +8,12 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
 
 makeDancer.prototype.step = function() {
-  console.log('Dancer steps');
-  setTimeout(this.oldStep, this.timeBetweenSteps); 
-    // need to pass in step of dancer.prototype 
-  //console.log(this.oldStep);
-  // What do the parameters evaluate3 to @ runtime?
-    // 
+  console.log('Dancer steps prebind');
+  console.log(this);
+  setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  console.log('Dancer steps postbind');
+  console.log(this.step);
+
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
