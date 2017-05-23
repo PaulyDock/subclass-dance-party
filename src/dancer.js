@@ -1,9 +1,15 @@
 var makeDancer = function(top, left, timeBetweenSteps) {
-  // removed left and top property;
+  // removed left and top property;'
+  //debugger;
+  
+  this.top = top;
+  this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   this.$node = $('<span class="dancer"></span>');
-  this.setPosition(top, left);
+  this.setPosition(this.top, this.left);
+  //debugger;
   this.step();
+  
 };
 
 
@@ -15,6 +21,7 @@ makeDancer.prototype.step = function() {
   // console.log('Dancer steps postbind----------');
   // console.log(this.timeBetweenSteps); // do I has value?
   // console.log(this.step);
+  //setPosition(this.top++, this.left++)
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -22,6 +29,7 @@ makeDancer.prototype.setPosition = function(top, left) {
     top: top,
     left: left
   };
+  console.log('setting position', top, left);
   this.$node.css(styleSettings);
 };
 
