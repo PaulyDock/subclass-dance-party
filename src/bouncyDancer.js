@@ -2,8 +2,8 @@ var BouncyDancer = function(top, left, timeBetweenSteps) {
   var randomSpeed = Math.random(); // [0, 0.99990
   makeDancer.call(this, top, left, timeBetweenSteps);
   // this.timeBetweenSteps = 200;
-  this.vertVelocity = 100 * randomSpeed;
-  this.horizVelocity = 200 * randomSpeed;
+  this.vertVelocity = 7.5 * randomSpeed;
+  this.horizVelocity = 15 * randomSpeed;
   this.step();
   console.log('I was born today.', this);
 };
