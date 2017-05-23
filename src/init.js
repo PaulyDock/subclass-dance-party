@@ -26,10 +26,12 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 50
+      Math.random() * 25
     );
     console.log('Making a new: ' + dancerMakerFunctionName);
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+    console.log(window.dancers);
   });
 });
 
