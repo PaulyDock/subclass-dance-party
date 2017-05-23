@@ -23,15 +23,24 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
-      Math.random() * 25
-    );
-    console.log('Making a new: ' + dancerMakerFunctionName);
+    let height = $('body').height() * Math.random();
+    console.log('dancer name', dancerMakerFunctionName);
+    if (dancerMakerFunctionName === 'Tornado') {
+      height = 125;
+    }
+    let width = $('body').width() * Math.random();
+    let frequency = Math.random() * 25;
+
+
+    var dancer = new dancerMakerFunction(height, width, frequency);
+      // $('body').height() * Math.random(),
+      // $('body').width() * Math.random(),
+      // Math.random() * 25
+    //);
+    //console.log('Making a new: ' + dancerMakerFunctionName);
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
-    console.log(window.dancers);
+    //console.log(window.dancers);
   });
 });
 

@@ -1,6 +1,6 @@
 var BouncyDancer = function(top, left, timeBetweenSteps) {
   var randomSpeed = Math.random(); // [0, 0.99990
-  var alienUrl = 'lib/images/alienDance.webp';
+  var alienUrl = 'lib/images/LankyAlien.gif';
   makeDancer.call(this, top, left, timeBetweenSteps);
   // this.timeBetweenSteps = 200;
   this.vertVelocity = 4 * randomSpeed;
@@ -38,6 +38,3 @@ BouncyDancer.prototype.step = function () {
   //console.log('Finished moving', this.top, this.left);
 };
 
-BouncyDancer.prototype.lineUp = function () {
-
-};
