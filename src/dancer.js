@@ -3,17 +3,19 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   this.$node = $('<span class="dancer"></span>');
-  //this.step();
+  this.setPosition();
+  this.step();
 };
 
 
 makeDancer.prototype.step = function() {
-  console.log('Dancer steps prebind');
-  console.log(this);
+  // console.log('Dancer steps prebind------------');
+  // console.log(this);
+  // console.log(this.step.bind(this));
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
-  console.log('Dancer steps postbind');
-  console.log(this.step);
-
+  // console.log('Dancer steps postbind----------');
+  // console.log(this.timeBetweenSteps); // do I has value?
+  // console.log(this.step);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {

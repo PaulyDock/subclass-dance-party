@@ -1,20 +1,17 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  // no need to set properties for blinkyDancer, it's taken care of with Dancer class
-
-  //this.oldStep = this.step; // assumes this.oldStep gets dancer.prototype.step;
-    // using line w/ tag (stepStore) in lieu of above line
-    // 
   makeDancer.call(this, top, left, timeBetweenSteps);
 };
 
 makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
-makeBlinkyDancer.prototype.oldStep = makeDancer.prototype.step; // <-- stepStore
+// makeBlinkyDancer.prototype.oldStep = makeDancer.prototype.step; // <-- stepStore
 makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 
 makeBlinkyDancer.prototype.step = function () {
-  console.log('blinky step');
-  console.log(this);
+  // console.log('blinky step------------');
+  // console.log(this);
+  // console.log(this.$node); // node span class dancer
   makeDancer.prototype.step.call(this);
+
   this.$node.toggle();
 };
 
