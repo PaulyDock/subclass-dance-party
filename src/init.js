@@ -42,5 +42,7 @@ $(document).ready(function() {
     window.dancers.push(dancer);
     //console.log(window.dancers);
   });
+
+  // window.dancers;
 });
 
